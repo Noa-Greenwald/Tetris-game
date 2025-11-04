@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./login.css" />
+    <title>Sign in & Sign up Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form id="login-form" class="sign-in-form" onsubmit="addUser('in')">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input required type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" />
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+                <form id="signup-form" class="sign-up-form" onsubmit="addUser('up')">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input required type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input required type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input required type="password" placeholder="Password" />
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Want to join us?
+                    </h3>
+                    <p>
+                        Tetris is a video game conceived and programmed by the Russian computer engineer Alexei Pezhitnov, while working at the Computing Center of the Soviet Academy of Sciences. The name of the game is derived from combining the number four in Greek, "Tetra" together with the name of Pezhitnov's favorite sport, tennis.
+
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="./pic/200w.gif" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of Our Valued Members</h3>
+                    <p>
+                        We've been waiting for you!
+                        Glad you are connected to our crazy game!
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="./pic/200w.gif" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script src="./login.js">
+//         document.getElementById('login-form').addEventListener('submit', (e) => {
+//             e.preventDefault();
+//             handleUser();
+//         });
+
+//         document.getElementById('signup-form').addEventListener('submit', (e) => {
+//             e.preventDefault();
+//             handleUser();
+//         });
+// 0
+//         const sign_in_btn = document.querySelector("#sign-in-btn");
+//         const sign_up_btn = document.querySelector("#sign-up-btn");
+//         const container = document.querySelector(".container");
+
+//         sign_up_btn.addEventListener("click", () => {
+//             console.log("Sign Up button clicked");
+//             container.classList.add("sign-up-mode");
+//         });
+
+//         sign_in_btn.addEventListener("click", () => {
+//             console.log("Sign In button clicked");
+//             container.classList.remove("sign-up-mode");
+//         });
+//         const allin = document.getElementsByTagName('input')
+//         console.log(allin);
+//         const namein = allin[0]
+//         const passwordin = allin[1]
+//         const nameup = allin[3]
+//         const mailup = allin[4]
+//         const passwordup = allin[5]
+//         let playerName
+//         let passwordnow
+//         let flag = true;
+//         let allUsers
+//         function Player(nameup, mailup, passwordup) {
+//             this.nameup = nameup
+//             this.mailup = mailup
+//             this.passwordup = passwordup
+//         }
+//         function addUser(value) {
+//             let player1 = {
+//                 "name": nameup.value,
+//                 "mail": mailup.value,
+//                 "password": passwordup.value
+//             };
+//             if(value == 'in')
+//             localStorage.setItem('currentUser', JSON.stringify(namein.value));
+//             else
+//             localStorage.setItem('currentUser', JSON.stringify(nameup.value));
+
+
+//             if (localStorage.getItem("users") == null) {
+//                 allUsers = [];
+//             } else {
+//                 allUsers = JSON.parse(localStorage.getItem("users"));
+//             }
+//             if (value == 'in') {
+//                 debugger
+//                 if (allUsers != null) {
+//                     for (let index = 0; index < allUsers.length; index++) {
+//                         playerName = allUsers[index].name;
+//                         passwordnow = allUsers[index].password
+//                         if (playerName == namein.value && passwordnow == passwordin.value) {
+//                             window.location.href = './tetris.html';
+//                             flag = false
+//                         }
+
+//                     }
+
+        
+// 		               if(flag==true) 
+
+//                           alert('אנחנו לא מכירים אותך עדיין יש להירשם')
+//                 }
+//             }
+
+//             else {
+//                 allUsers.push(player1)
+//                 alert('נרשמת בהצלחה!')
+//                 window.location.href = './tetris.html'
+//                 localStorage.setItem("users", JSON.stringify(allUsers))
+
+
+//             }
+
+//         }
+    </script>
+
+</body>
+
+</html>

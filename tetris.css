@@ -1,0 +1,393 @@
+
+html, body {
+    padding:  0;
+    background-color: black;
+    height: 95%;
+    padding: 1%;
+    display: flex;
+    filter: blur(0); /* ערך העמעום המקורי */
+  transition: filter 0.5s;
+}
+
+#gameover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 300px;
+  z-index: 999;
+  display: none;
+}
+#pauseButton{
+  text-align: center;
+  border-radius: 15px;
+  height: 25px;
+  width: 100px;
+  background-color:  #ff357a;
+  border: 3px solid #fff;
+  color: #000;
+  font-weight: bold;
+  padding: 3px;
+  appearance: none; /* להסיר את סגנון ברירת המחדל של הדפדפן */
+  outline: none;
+  cursor: pointer;
+ 
+}
+#start-btn {
+  position: absolute;
+  bottom: 80px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #ff357a, #fff172);
+  border: none;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ring {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ring h2 {
+  font-size: 2em;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+}
+
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite, changeColor 6s linear infinite;
+}
+
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animate 4s linear infinite, changeColor 4s linear infinite;
+}
+
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animate2 10s linear infinite, changeColor 10s linear infinite;
+}
+
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    border-color: #ffffff;
+  }
+  25% {
+    border-color: #ff357a;
+  }
+  50% {
+    border-color: #fff172;
+  }
+  75% {
+    border-color: #00ff00;
+  }
+  100% {
+    border-color: #fff;
+  }
+}
+
+
+.inputBx {
+  position: relative;
+  width: auto;
+}
+
+.inputBx input[type="submit"] {
+  width: auto;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #ff357a, #fff172);
+  border: none;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* #gameover{
+  display: none;
+  position: absolute;
+  background-color: #00ffff54;
+  width: 250px;
+  height: 100px;
+  margin-left: 40%;
+p{
+ color: #00ff00;
+ padding-top: 20vh; 
+ font-size:x-large ;
+}
+a{
+  font-size: xx-large;
+  text-decoration: none;
+  height: 20vh;
+  width: 10vh;
+  padding: 10px 50px ;
+  background-color: #00ff00;
+  color: #9900ff;
+}
+} */
+
+#location{
+  /* color: #ff0000; */
+}
+ td {
+    border: 1px solid rgba(39, 38, 40, 0.932);
+    border-collapse: collapse;
+}
+/* table {
+    margin-left:130px;
+    align-items: center;
+    border: #9900ff 3px double;
+
+  } */
+  table {
+    margin-left: 130px;
+    align-items: center;
+    border: 3px solid #fff; /* מסגרת בסיסית */
+    position: relative;
+    animation: changeColor 3s linear infinite; /* אנימציה לשינוי צבעים */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* זוהר בסיסי */
+  }
+  
+  @keyframes changeColor {
+    0% {
+      border-color: #fff;
+      box-shadow: 0 0 20px #fff;
+    }
+    25% {
+      border-color: #ff357a;
+      box-shadow: 0 0 20px #ff357a;
+    }
+    50% {
+      border-color: #fff172;
+      box-shadow: 0 0 20px #fff172;
+    }
+    75% {
+      border-color: #00ff00;
+      box-shadow: 0 0 20px #00ff00;
+    }
+    100% {
+      border-color: #fff;
+      box-shadow: 0 0 20px #fff;
+    }
+  }
+  #level {
+    font-size: 13px;
+
+    text-align: center;
+    border-radius: 15px;
+    height: 25px;
+    width: 100px;
+    background-color:  #ff357a;
+    border: 3px solid #fff;
+    color: #000;
+    font-weight: bold;
+    padding: 5px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+#level.va
+#location h3 {
+  display: block; /* וודא שזה לא מוגדר כ-none */
+  visibility: visible; /* וודא שזה לא מוגדר כ-hidden */
+  color: pink; /* וודא שהצבע לא זהה לרקע */
+  font-size: xx-large; /* זה אמור לעבוד אבל אפשר לנסות ערך אחר */
+}
+
+#level option {
+  background: linear-gradient(45deg, #ff357a, #fff172, #00ff00);
+
+    /* background-color: #fff; */
+    color: #000;
+    font-weight: bold;
+}
+
+/* #level {
+    text-align: right;   
+    border-radius: 15px;
+    height: 20px;
+    width: 100px;
+    background-color: #003cff;
+    
+} */
+/* #right{
+  color: white;
+    border-radius: 15px;
+    height: 250px;
+    width: 200px;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    border: #0000ff solid 3px;
+}
+#score{
+    color: white;
+}
+#high-score{
+    color: white;
+
+} */
+#right {
+  color: white;
+  border-radius: 15px;
+  height: 300px;
+  width: 200px;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  padding-bottom: 50px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  border: 3px solid #fff;
+  animation: changeColor 3s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* רקע כהה חצי שקוף */
+}
+
+@keyframes changeColor {
+  0% {
+    border-color: #fff;
+    box-shadow: 0 0 20px #fff;
+  }
+  25% {
+    border-color: #ff357a;
+    box-shadow: 0 0 20px #ff357a;
+  }
+  50% {
+    border-color: #fff172;
+    box-shadow: 0 0 20px #fff172;
+  }
+  75% {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+  }
+  100% {
+    border-color: #fff;
+    box-shadow: 0 0 20px #fff;
+  }
+}
+
+#score, #high-score {
+  color: white;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+td {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+#mw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 150px;
+
+
+  }
+  .tetris {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 6rem; /* הקטנת גודל הכתב */
+    background: linear-gradient(45deg, #fff, #ff357a, #fff172, #00ff00, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: colorchange 10s infinite;
+    transform: rotate(-90deg); /* הפיכת הטקסט על צידו */
+    margin-left: 6%; /* מרחק של 10% מהגבול השמאלי */
+  }
+  
+  @keyframes colorchange {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  .tetris {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 6rem; 
+  background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #9900ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: colorchange 10s infinite;
+  transform: rotate(-90deg);
+  margin-left: 6%;
+}
+
+@keyframes colorchange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+ */

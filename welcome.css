@@ -1,0 +1,33 @@
+body{
+    background-image: url("./pic/1.jpg");
+}
+#write{
+
+    color: white;
+    font-size: 200px;
+    text-align: center;
+    font-weight: bold;
+margin:10%;
+}
+
+.start { 
+background-color: white;
+color: black;
+border-radius: 40px;
+border: 2px solid black;  
+padding: 15px 40px;
+font-weight: bold;
+
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+} 
+
+#startw{
+    font-size: larger;
+}

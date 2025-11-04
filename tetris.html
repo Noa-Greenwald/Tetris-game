@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS</title>
+    <link rel="stylesheet" href="tetris.css">
+</head >
+<body onload="updatePlayerName()">
+
+<div id="gameover" class="login">
+    <div class="ring">
+      <i></i>
+      <i></i>
+      <i></i>
+      <h2>Game Over</h2>
+    </div>
+    <div class="inputBx">
+      <input type="submit" id="start-btn" value="Play Again" onclick="location.href='./tetris.html'">
+    </div>
+  </div>
+    <div id="right">
+        <div id="location"> </div>
+        <button id="level" onclick="startGame()">start game</button>
+<p id="score">your score:</p>
+<p id="currentScore"></p>
+<p id="high-score">high score:</p>
+<p id="maxscore"></p>
+
+<button id="pauseButton" onclick="stopGame()">Pause</button>
+
+</div>
+<div id="mw">
+<div class="tetris">TETRIS</div>
+<div id="matrix-container"></div>
+</div>
+    <script src="./tetris.js"></script> 
+  
+</body>
+</html>
